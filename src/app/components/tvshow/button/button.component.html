@@ -1,0 +1,59 @@
+<div class="md:absolute md:pin-b md:pin-x md:px-2 md:p-6 z-50 bg-black">
+    <div class="relative container mx-auto">
+      <ul class="list-reset flex flex-row mb-2">
+        <li class="md:mr-3">
+          <a (click)="setButton('SINOPSE')" class="text-sm md:text-base bg-transparent uppercase tracking-wide inline-block no-underline py-2 px-4 text-white font-bold" href="#">
+            <span [class]="getButton('SINOPSE')">General</span>
+          </a>
+        </li>
+        <li class="md:mr-3">
+          <a (click)="setButton('Elenco')" class="text-sm md:text-base bg-transparent uppercase tracking-wide inline-block no-underline py-2 px-4 text-white font-bold" href="#">
+              <span [class]="getButton('Elenco')">Elenco</span>
+          </a>
+        </li>
+        <li class="md:mr-3">
+          <a class="text-sm md:text-base bg-transparent uppercase tracking-wide inline-block no-underline py-2 px-4 text-white font-bold">
+            <span class="hidden md:inline-block">Principales</span> premios
+          </a>
+        </li>
+      </ul>
+      <div class="mx-4 pt-4">
+        <div class="flex flex-col md:flex-row">
+          <div class="md:w-2/5 mb-6">
+            <ul class="list-reset flex flex-row justify-between">
+              <li class="w-1/4 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                  <path stroke="#dae1e7" fill="#dae1e7" class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/>
+                </svg>
+                <p class="text-grey-light">Mi Lista</p>
+              </li>
+              <li class="w-1/4 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                  <path stroke="#dae1e7" fill="#dae1e7" class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.54a5 5 0 0 1 7.08 0 1 1 0 0 1-1.42 1.42 3 3 0 0 0-4.24 0 1 1 0 0 1-1.42-1.42zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                </svg>
+                <p class="text-grey-light">Evaluar</p>
+              </li>
+              <li class="w-1/4 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                  <path stroke="#dae1e7" fill="#dae1e7" class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/>
+                </svg>
+                <p class="text-grey-light">Grabar</p>
+              </li>
+              <li class="w-1/4 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                  <path stroke="#dae1e7" fill="#dae1e7" class="heroicon-ui" d="M13 5.41V17a1 1 0 0 1-2 0V5.41l-3.3 3.3a1 1 0 0 1-1.4-1.42l5-5a1 1 0 0 1 1.4 0l5 5a1 1 0 1 1-1.4 1.42L13 5.4zM3 17a1 1 0 0 1 2 0v3h14v-3a1 1 0 0 1 2 0v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3z"/>
+                </svg>
+                <p class="text-grey-light">Compartir</p>
+              </li>
+            </ul>
+          </div>
+          <div class="md:w-3/5 text-grey-light">
+            <p class="font-bold uppercase mb-2">{{ button }}</p>
+            <p *ngIf="button==='SINOPSE'">{{ show.Synopsis }}</p>
+            <ul *ngIf="button==='Elenco'" >
+              <li *ngFor="let cast of show.Cast">{{ cast.Name }}</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+  </div>

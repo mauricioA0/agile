@@ -1,0 +1,15 @@
+<header class="pt-4 mb-5">
+    <div class="container mx-auto px-2 flex items-center">
+      <div class="w-5/6">
+        <h1 class="text-md md:text-5xl text-white mb-2">{{ show.Title }}</h1>
+        <ul class="text-xs md:text-sm special list-reset flex uppercase text-grey-light">
+          <li class="mr-2" *ngFor="let genres of show.Genres">
+            {{ genres.Title }}
+          </li>
+          <li class="mr-2">
+            {{ show.Year }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>

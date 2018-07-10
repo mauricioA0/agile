@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/tailwindcss/dist/tailwind.css";
+
+.special li:last-child::after {
+  content: "";
+}
+
+.bg-rgba-05 {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.heroicon-ui {
+  stroke: #dae1e7;
+  fill: #dae1e7;
+}
+
+@media (min-width: 768px) {
+  .special li::after {
+    content: "/";
+  }
+}
